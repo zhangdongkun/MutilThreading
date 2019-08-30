@@ -1,4 +1,4 @@
-package cn.zdk.thread01;
+package cn.zdk.thread;
 
 /**
  * @author ZhangDongkun

@@ -1,4 +1,4 @@
-package cn.zdk.thread01;
+package cn.zdk.thread;
 
 /**
  * @description 手动创建一个线程练练手
