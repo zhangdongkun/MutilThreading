@@ -6,7 +6,7 @@ package cn.zdk.thread01;
  * @date: 2019-08-29 22:53
  **/
 
-public class TreadTest1 {
+public class ThreadTest1 {
 
 
     public static void main(String[] args) {
