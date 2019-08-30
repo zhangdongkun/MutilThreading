@@ -1,27 +1,36 @@
 package cn.zdk.thread01;
 
 /**
- * jdk 8 dd 的写法
+ * @author ZhangDongkun
+ * @date：2019/8/30 10:27
+ * @description： jdk 8  :: 测试方法同步器 synchronized
  */
 public class ThreadTest02 {
-    private  int count =0;
-    public synchronized void print1(){
-        System.err.println( Thread.currentThread().getName() +"---- count:-->" +count );
-    }
+    private int count = 0;
 
-    public synchronized  void print2(){
-     count ++;
-       // System.out.println( Thread.currentThread().getName() +"---- count:-->" +count );
+
+    /**
+     * 方法同步器 作用在当前对象 相当于 synchronized(this){
+     * <p>
+     * }
+     */
+    public synchronized void print2() {
+        try {
+            Thread.sleep(500);
+        } catch (Exception e) {
+
+        }
+        System.err.println(Thread.currentThread().getId() + "---- count:-->" + count);
+        count++;
     }
 
     public static void main(String[] args) {
-        ThreadTest02 t = new  ThreadTest02();
-       // 类名::方法名，相当于对这个方法闭包的引用，类似js中的一个function
+        ThreadTest02 t = new ThreadTest02();
+        // 类名::方法名，相当于对这个方法闭包的引用，类似js中的一个function
         //Runnable r = () -> t.print1();
         //Runnable r = t::print1
-        for (int i = 0; i < 50;i++) {
-            new Thread(t::print1,"t1").start();
-            new Thread(t::print2,"t2").start();
+        for (int i = 0; i < 50; i++) {
+            new Thread(t::print2, "t2").start();
         }
 
     }
