@@ -15,13 +15,14 @@ public class ThreadTest02 {
      * }
      */
     public synchronized void print2() {
+        count++;
         try {
-            Thread.sleep(500);
+          //  Thread.sleep(500);
         } catch (Exception e) {
 
         }
         System.err.println(Thread.currentThread().getId() + "---- count:-->" + count);
-        count++;
+
     }
 
     public static void main(String[] args) {
