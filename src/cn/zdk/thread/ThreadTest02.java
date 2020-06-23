@@ -10,6 +10,7 @@ public class ThreadTest02 {
 
 
     /**
+     * 1
      * 方法同步器 作用在当前对象 相当于 synchronized(this){
      * <p>
      * }
