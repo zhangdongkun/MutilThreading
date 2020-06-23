@@ -3,7 +3,7 @@ package cn.zdk.thread;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 测试读写一致
+ * 测试读写一致2
  * @author ZhangDongkun
  * @date：2019/8/30 10:37
  * 试有关小知识点：银行代码当然需要加锁，写操作需要加锁那么读操作需要加锁吗？
