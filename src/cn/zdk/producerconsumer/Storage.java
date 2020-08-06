@@ -16,6 +16,7 @@ public class Storage {
         synchronized (list) {
             while (list.size() == MAX_SIZE) {
                 try {
+                    System.out.println("仓库已满开始休眠");
                     list.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
