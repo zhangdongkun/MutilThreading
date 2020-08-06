@@ -1,7 +1,7 @@
 package cn.zdk.thread;
 
 /***
- * synchronized 是加载对象上的 生成者和消费者要同时加锁才能保持数据一直
+ * synchronized
  */
 public class ThreadTest05 {
     private String  id = "111";
