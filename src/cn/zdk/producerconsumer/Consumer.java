@@ -10,6 +10,8 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
+
+
         while (true) {
             storage.consumer();
             try {

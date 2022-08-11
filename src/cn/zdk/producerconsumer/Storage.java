@@ -36,7 +36,7 @@ public class Storage {
      */
     public void consumer() {
         synchronized (list) {
-            while (list.size() == 0) {
+            while (list.isEmpty()) {
                 try {
                     list.wait();
                 } catch (InterruptedException e) {

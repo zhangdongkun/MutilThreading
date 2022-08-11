@@ -23,15 +23,15 @@ import java.util.concurrent.*;
 
 public class CallableTest {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
         ExecutorService executor = Executors.newCachedThreadPool();
         Task task = new Task();
+
+
+
+        Future<Integer> future =  executor.submit(task);
+        System.out.println("子线程结束:"+future.get(1000,TimeUnit.MILLISECONDS).toString());
         System.out.println("主线程结束");
-
-
-        Future<Integer> future =  executor.submit(()->{ Thread.sleep(3000); return 2;});
-        Future future2 =  executor.submit(()->System.out.println("111111111111111111"));
-        System.out.println("子线程结束:"+future2.get().toString());
 
     }
 }
@@ -41,12 +41,9 @@ class Task implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         System.out.println("子在进行计算");
-        Thread.sleep(3000);
-        int sum = 0;
-        for(int i=0;i<100;i++) {
-            sum += i;
-        }
-        return sum;
-    }
+        Thread.sleep(30000);
+        return 1;
+      }
+
 }
 
