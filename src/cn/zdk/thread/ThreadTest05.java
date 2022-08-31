@@ -12,9 +12,15 @@ public class ThreadTest05 {
         });
         t1.start();
         Thread t2 = new Thread(()->{
+            try {
+                Thread.sleep(2000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             threadTest05.getId();
         });
         t2.start();
+        t2.interrupt();
 
        System.out.println(threadTest05.getId());
     }

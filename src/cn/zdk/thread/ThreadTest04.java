@@ -3,7 +3,7 @@ package cn.zdk.thread;
 import java.util.concurrent.TimeUnit;
 
 /**
- * join µÈ´ýµ±Ç°Ïß³ÌÔËÐÐÍê
+ * join ï¿½È´ï¿½ï¿½ï¿½Ç°ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class ThreadTest04 {
     public static void main(String[] args) throws InterruptedException {
@@ -11,6 +11,7 @@ public class ThreadTest04 {
             try {
 
                 TimeUnit.SECONDS.sleep(3);
+                TimeUnit.DAYS.sleep(1);
                 System.out.println("1111");
             } catch (InterruptedException e) {
                 e.printStackTrace();

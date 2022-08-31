@@ -16,7 +16,9 @@ public class ServiceIsHeldByCurrentThread {
     public void serviceMethod(){
         try {
             System.out.println("lock.isHeldByCurrentThread() "+lock.isHeldByCurrentThread());
+
             lock.lock();
+
             System.out.println("lock.isHeldByCurrentThread() "+lock.isHeldByCurrentThread());
         } finally {
             lock.unlock();
